@@ -60,7 +60,7 @@ public class Input
 		floatOne = keyboard.nextFloat();
 
 
-		System.out.print("Enter an double :: ");
+		System.out.print("Enter an float :: ");
 		floatTwo = keyboard.nextFloat();
 
 
@@ -76,7 +76,7 @@ public class Input
 		shortOne = keyboard.nextShort();
 
 
-		System.out.print("Enter an double :: ");
+		System.out.print("Enter an short :: ");
 		shortTwo = keyboard.nextShort();
 
 
