@@ -57,6 +57,6 @@ public class Distance
 	{
 		System.out.println("\n\n");
 		String theDistance = String.format("%.3f\n", distance);
-		return "distance ==" +distance;
+		return "distance == " +theDistance;
 	}
 }
