@@ -55,7 +55,7 @@ public class Distance
 
 	public String toString()
 	{
-		System.out.println("\n\n");
+		System.out.println("\n");
 		String theDistance = String.format("%.3f\n", distance);
 		return "distance == " +theDistance;
 	}
