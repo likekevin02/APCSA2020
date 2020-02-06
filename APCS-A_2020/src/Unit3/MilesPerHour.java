@@ -50,6 +50,6 @@ public class MilesPerHour
 	public String toString()
 	{
 		System.out.println("\n");
-		return +distance + " miles in " + +hours + " hours and " + +minutes + " minutes = " +mph;
+		return +distance + " miles in " + +hours + " hours and " + +minutes + "minutes = " +mph;
 	}
 }
