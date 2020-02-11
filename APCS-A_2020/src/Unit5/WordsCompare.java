@@ -28,15 +28,17 @@ public class WordsCompare
 	{
 		wordOne = one;
 		wordTwo = two;
+		
 	}
 
 	public void compare()
 	{
-		wordOne.compareTo(wordTwo);
+		compare = wordOne.compareTo(wordTwo);
 	}
 
 	public String toString()
 	{
+		this.compare();
 		if(compare<0)
 		{
 			return wordOne + " should be placed before " + wordTwo + "\n";
