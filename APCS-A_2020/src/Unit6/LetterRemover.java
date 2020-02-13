@@ -12,7 +12,7 @@ public class LetterRemover
 
 	public LetterRemover()
 	{
-		setRemover(sentence,lookFor);
+		setRemover("hi",'a');
 	}
 
 	public LetterRemover(String s, char rem) {
@@ -28,7 +28,12 @@ public class LetterRemover
 
 	public String removeLetters()
 	{
-		String cleaned=sentence;
+		String cleaned = sentence;
+		while (cleaned.indexOf(lookFor) >= 0) {
+			int index = cleaned.indexOf(lookFor);
+			cleaned = cleaned.substring(0,index) + cleaned.substring(index + 1);
+		}
+		
 		return cleaned;
 	}
 

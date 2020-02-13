@@ -36,13 +36,16 @@ public class Word
 
 	public String getBackWards()
 	{
-		String back="";
-		
+		String back = "";
+		for (int i = word.length()-1; i >= 0; i--) {
+			back += word.charAt(i) + "";
+		}
 		return back;
 	}
 
  	public String toString()
  	{
- 		return "";
+ 		
+ 		return getFirstChar() + "\n" + getLastChar()+ "\n" + getBackWards() + "\n" + word + "\n";
 	}
 }
