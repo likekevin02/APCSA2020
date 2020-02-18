@@ -20,7 +20,7 @@ public class Review {
   
   static{
     try {
-      Scanner input = new Scanner(new File("cleanSentiment.csv"));
+      Scanner input = new Scanner(new File("src/consumerLab/cleanSentiment.csv"));
       while(input.hasNextLine()){
         String[] temp = input.nextLine().split(",");
         sentiment.put(temp[0],Double.parseDouble(temp[1]));
@@ -35,7 +35,7 @@ public class Review {
   
   //read in the positive adjectives in postiveAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("positiveAdjectives.txt"));
+      Scanner input = new Scanner(new File("src/consumerLab/positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
         System.out.println(temp);
@@ -49,7 +49,7 @@ public class Review {
  
   //read in the negative adjectives in negativeAdjectives.txt
      try {
-      Scanner input = new Scanner(new File("negativeAdjectives.txt"));
+      Scanner input = new Scanner(new File("src/consumerLab/negativeAdjectives.txt"));
       while(input.hasNextLine()){
         negAdjectives.add(input.nextLine().trim());
       }
@@ -152,12 +152,28 @@ public class Review {
  */
   public static double totalSentiment(String filename)
   {
+	  String fileContents = textToString(filename);
+	  double sentimentTotal = 0.0;
     // read in the file contents into a string using the textToString method with the filename
-
+	 System.out.println(fileContents);
     // set up a sentimentTotal variable
-
+	 int startString = 0;
     // loop through the file contents 
-
+	 System.out.print("\n");
+	 for (int i = 0; i < fileContents.length(); i++) {
+		 if (fileContents.charAt(i) == ' ') {
+			 sentimentTotal += sentimentVal(fileContents.substring(startString,i));
+			 try {
+				 String punct = ".,?!";
+				 if (punct.contains(fileContents)) {
+					 
+				 }
+				 
+			 } catch (Exception e) {
+				 
+			 }
+		 }
+	 }
        // find each word
        // add in its sentimentVal
        // set the file contents to start after this word
