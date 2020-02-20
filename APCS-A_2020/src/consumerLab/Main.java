@@ -14,6 +14,8 @@ class Main {
 		System.out.println("\n");
 		System.out.println(Review.totalSentiment("src/consumerLab/26WestReview.txt"));
 		System.out.println("This review gave " + Review.starRating("src/consumerLab/26WestReview.txt") + " stars.");
+		System.out.println("Old Review:: " + Review.textToString("src/ConsumerLab/simpleReview.txt"));
+		System.out.println("New Review:: " + Review.fakeReview("src/ConsumerLab/simpleReview.txt"));
 		
 		// test reading from files
 		// read in the positive adjectives in postiveAdjectives.txt
