@@ -200,4 +200,26 @@ public class Review {
 
 		return stars;
 	}
+	
+	public static String fakeReview(String fileName) 
+  	{	
+	  	String words = textToString(fileName);
+	  
+	  	while (words.contains("*")) {
+		 	 int startIndex = words.indexOf("*");
+		 	 int endIndex = words.indexOf(" ", startIndex);
+		  	String old1 = words.substring(startIndex + 1, endIndex);
+		  	String new1;
+		  	double oldWord = sentimentVal(old);
+		  
+		 	 if (oldWord <= 0)
+			  new1 = randomPositiveAdj();
+		  	else
+			  new1 = old1;
+			  
+		  words = words.substring(0, startIndex) + new1 + words.substring(endIndex);
+	 	 }
+	  
+	  	return words;
+ 	 }
 }
