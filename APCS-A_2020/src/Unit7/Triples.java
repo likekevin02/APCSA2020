@@ -8,6 +8,9 @@ import static java.lang.System.*;
 public class Triples
 {
    private int number;
+   private int one = 1;
+   private int two = 1;
+   private int three = 1;
 
 	public Triples()
 	{
@@ -23,7 +26,7 @@ public class Triples
 	public void setNum(int num)
 	{
 		num = number;
-
+		
 	}
 	
 	private int greatestCommonFactor(int a, int b, int c)
@@ -50,19 +53,18 @@ public class Triples
 	}
 	
 	public boolean pythagorean(int a, int b, int c) {
-		
+		if (a*a + b*b == c*c) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 
 	public String toString()
 	{
-		String output="";
 
+		return "asdf";
 
-
-
-
-
-		return output+"\n";
 	}
 }
