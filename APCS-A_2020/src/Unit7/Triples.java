@@ -64,7 +64,7 @@ public class Triples
 	public String toString()
 	{
 
-		return "asdf";
+		return "wow";
 
 	}
 }
