@@ -12,10 +12,12 @@ public class TriangleFive
 
 	public TriangleFive()
 	{
+		setLetter('a');
 	}
 
 	public TriangleFive(char c, int amt)
 	{
+		setLetter(letter);
 	}
 
 	public void setLetter(char c)
