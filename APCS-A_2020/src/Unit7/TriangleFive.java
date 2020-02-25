@@ -13,7 +13,7 @@ public class TriangleFive
 	public TriangleFive()
 	{
 		setLetter('A');
-		setAmount('1');
+		setAmount(1);
 	}
 
 	public TriangleFive(char c, int amt)

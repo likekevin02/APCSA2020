@@ -62,7 +62,7 @@ public class Triples {
 		for (int i = 1; i < number; i++) {
 			for (int j = i; j < number; j++) {
 				for (int k = 1; k < number; k++) {
-					if (greatestCommonFactor(i, j, k) <= 1 && pythagorean(i, j, k) && evens(i, j, k)) {
+					if (greatestCommonFactor(i, j, k) <= 1 && pythagorean(i, j, k) == true && evens(i, j, k) == true) {
 						output += i + " " + j + " " + k + "\n";
 					}
 				}
