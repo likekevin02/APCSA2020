@@ -94,11 +94,14 @@ public class Deck {
 			}
 		}
 		
-		rtn = rtn +"\nDealt cards: \n";
+		rtn = rtn +"\n\nDealt cards: \n";
 		for (int k = cards.size()-1; k>= size; k--) {
 			rtn = rtn + cards.get(k);
 			if (k != size) {
 				rtn = rtn+ ", ";
+			}
+			if ((size - k)% 2 == 0){
+				rtn = rtn +"\n";
 			}
 		}
 		
