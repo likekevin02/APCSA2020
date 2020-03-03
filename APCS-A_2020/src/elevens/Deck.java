@@ -44,9 +44,10 @@ public class Deck {
 		
 		size = cards.size();
 		top = size-1;
-		shuffle();
+		this.shuffle();
 	}
 
+	//dealCard is deal
 	public Card dealCard() {
 		Card topCard;
 		if (!isEmpty()) {
@@ -73,7 +74,14 @@ public class Deck {
 	// reset the top card
 
 	public void shuffle() {
-		Collections.shuffle(cards);
+		
+		for (int k = size-1; k >= 1; k--) {
+			int r = (int) (Math.random()*size);
+			Card temp = cards.get(k);
+			Card temp1 = cards.get(r);
+			cards.set(k,temp1);
+			cards.set(r, temp);
+		}
 	}
 
 	public void resetTop() {

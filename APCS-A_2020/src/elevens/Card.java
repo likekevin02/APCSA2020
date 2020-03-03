@@ -84,9 +84,9 @@ public class Card
 		
 		public String toString() {
 			if (pointValue > 0) {
-				return FACES[pointValue] + " of " + suit;
+				return FACES[pointValue] + " of " + suit + " (point value = " + pointValue + ")";
 			}
-			return FACES[face] + " of " + suit;
+			return FACES[face] + " of " + suit + " (point value = " + pointValue + ")";
 		}
 		
 		public boolean matches(Card otherCard) {
