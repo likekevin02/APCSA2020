@@ -12,21 +12,22 @@ public class CelebrityGame
 	/**
 	 * A reference to a Celebrity or subclass instance.
 	 */
-
+	private Celebrity gameCelebrity;
 	/**
 	 * The GUI frame for the Celebrity game.
 	 */
-
+	private CelebrityFrame gameWindow; 
 	/**
 	 * The ArrayList of Celebrity values that make up the game
 	 */
-	ArrayList<Celebrity> celebList = new ArrayList<Celebrity>();
-
+	private ArrayList<Celebrity> celebGameList; 
 	/**
 	 * Builds the game and starts the GUI
 	 */
 	public CelebrityGame()
 	{
+		celebGameList =  new ArrayList<Celebrity>();
+		gameWindow = new CelebrityFrame(this);
 	}
 
 	/**
@@ -34,6 +35,8 @@ public class CelebrityGame
 	 */
 	public void prepareGame()
 	{
+		celebGameList = new ArrayList<Celebrity>();
+		gameWindow.replaceScreen("START");
 	}
 
 	/**
@@ -46,7 +49,15 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return false;
+		boolean valid = false;
+		if(guess.trim().equalsIgnoreCase( celebGameList.get(0).getAnswer().trim())) {
+			valid = true;
+			celebGameList.remove(0);
+		}
+		if(celebGameList.size()==0) {
+			gameCelebrity = new Celebrity("","");
+		}
+		return valid;
 	}
 
 	/**
@@ -56,7 +67,11 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-		
+		if (celebGameList != null && celebGameList.size() > 0 )
+		{
+		this.gameCelebrity = celebGameList.get(0);
+		gameWindow.replaceScreen("GAME");
+		}
 	}
 
 	/**
@@ -71,7 +86,9 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		
+		if(validateCelebrity(name)&&validateClue(guess, type)) {
+			celebGameList.add(new Celebrity(name, guess));
+		}
 	}
 
 	/**
@@ -81,7 +98,11 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		return false;
+		boolean valid = false; 
+		if(name.trim().length()>=4) {
+			valid = true;
+		}
+		return valid;
 	}
 
 	/**
@@ -93,7 +114,11 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		return false;
+		boolean valid = false;
+		if(clue.trim().length()>=10) {
+			valid = true;
+		}
+		return valid;
 	}
 
 	/**
@@ -103,7 +128,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
@@ -114,7 +139,9 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		if (celebGameList.size()!=0)
+			return celebGameList.get(0).getClue();
+		return "";
 	}
 
 	/**
@@ -125,6 +152,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return celebGameList.get(0).getAnswer();
 	}
 }
