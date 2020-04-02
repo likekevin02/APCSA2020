@@ -1,4 +1,4 @@
-package gradebook;
+package finalLabQ3;
 //© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
@@ -9,15 +9,21 @@ import java.util.Arrays;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
-import java.io.File;
 
-public class GradeBookFileRunner
+public class GradeBookRunner
 {
-   public static void main( String args[] ) throws Exception
+   public static void main( String args[] )
    {
 		out.println("Welcome to the Class Stats program!");
 		
-		Scanner file = new Scanner(new File("gradebook.dat"));
+		Scanner keyboard = new Scanner(System.in);
+
+
+
+
+
+
+
 
 
 
