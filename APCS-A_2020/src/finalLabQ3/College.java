@@ -12,8 +12,9 @@ public class College implements Comparable<College>{
 	private Stats myStats;
 	private int myRank;
 	
-	public College(String nm) {
+	public College(String nm, String loc) {
 		setName(nm);
+		setLocation(loc);
 		myStats = new Stats();
 	}
 
@@ -34,6 +35,9 @@ public class College implements Comparable<College>{
 		name = nm;
 	}
 	
+	public void setLocation(String loc) {
+		location = loc;
+	}
 	
 	public void setStats(Stats s) {
 		myStats = s;
@@ -55,7 +59,7 @@ public class College implements Comparable<College>{
 	public String toString() {
 		String output = "";
 		output += "College: " + name + "\n";
-		output += myStats;
+		output += myStats + "\n";
 		return output;
 	}
 	

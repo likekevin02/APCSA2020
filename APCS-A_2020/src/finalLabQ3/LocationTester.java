@@ -19,7 +19,7 @@ public class LocationTester {
 	    	College col = allColleges.get(i);
 	    	col.setStats(allStats.get(i));
 	    	
-	    	if (col.getLocation().equals("MA")) {
+	    	if (col.getLocation().contains("MA")) {
 	    		test.addCollege(col);
 	    	}
 	    }
