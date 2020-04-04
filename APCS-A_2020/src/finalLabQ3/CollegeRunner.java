@@ -27,8 +27,8 @@ public class CollegeRunner {
 
 		}
 
-		for (College t : allColleges) {
-			System.out.println("Location: " + t.getLocation() + "\n" + t);
+		for (College col : allColleges) {
+			System.out.println("Location: " + col.getLocation() + "\n" + col);
 		}
 
 	}
