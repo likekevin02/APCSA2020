@@ -21,7 +21,16 @@ public class CollegeRunner {
 		ArrayList<College> allColleges = ds.fetchList(College.class, "Name", "Location");
 		ArrayList<Location> allLocations = new ArrayList<Location>();
 
-	
+		for (int i = 0; i < allColleges.size(); i++) {
+			College col = allColleges.get(i);
+			col.setStats(allStats.get(i));
+
+		}
+
+		for (College t : allColleges) {
+			System.out.println("Location: " + t.getLocation() + "\n" + t);
 		}
 
 	}
+
+}

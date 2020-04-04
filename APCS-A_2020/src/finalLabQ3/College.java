@@ -6,6 +6,8 @@ import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
 
+import java.util.ArrayList;
+
 public class College implements Comparable<College>{
 	private String name;
 	private String location;
@@ -62,5 +64,6 @@ public class College implements Comparable<College>{
 		output += myStats + "\n";
 		return output;
 	}
+
 	
 }

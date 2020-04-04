@@ -43,8 +43,20 @@ public class Location implements Comparable<Location> {
 		Collections.sort(colleges);
 	}
 
-	public int compareTo(Location other) {
-		return this.getLocation().compareTo(other.getLocation());
+	public int compareTo(Location l) {
+		String other = l.toString();
+		for (int i = 0; i < 2; i++)
+        {
+            if (location.charAt(i) > other.charAt(i))
+            {
+                return 1;
+            }
+            if (location.charAt(i) < other.charAt(i))
+            {
+                return -1;
+            }
+        }
+        return 0;
 	}
 
 	public String toString() {
