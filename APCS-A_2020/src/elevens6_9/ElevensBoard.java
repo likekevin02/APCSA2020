@@ -78,7 +78,7 @@ public class ElevensBoard extends Board {
 			cards.add(i);
 		}
 
-		return (containsPairSum11(cards) || containsJQK(cards));
+		return (containsPairSum11(cards) == true || containsJQK(cards) == true);
 	}
 
 	/**
